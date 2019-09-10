@@ -28,10 +28,14 @@ class App extends React.Component {
     const celsius = this.state.scale === 'c' ? temp : this.FtoC(temp);
     const fahrenheit = this.state.scale === 'f' ? temp : this.CtoF(temp);
     return (
-      <div>
-        State is lifted up, but manipulated from both components as well.
-        <Celsius temperature={celsius} onTempChange={this.onCelsiusChange} />
-        <Fahrenheit temperature={fahrenheit} onTempChange={this.onFahrenheitChange} />
+      <div class="container">
+        <div class="row">
+          <div class="col-sm"><h3>One of three columns</h3>State is lifted up, but manipulated from both components as well.</div>
+          <div class="col-sm"><h3>One of three columns</h3><Celsius temperature={celsius} onTempChange={this.onCelsiusChange} /></div>
+          <div class="col-sm"><h3>One of three columns</h3><Fahrenheit temperature={fahrenheit} onTempChange={this.onFahrenheitChange} /></div>
+        
+        
+        </div>
       </div>
     );
   }
